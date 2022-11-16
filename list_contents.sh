@@ -5,7 +5,7 @@ echo "$timestamp"
 deviceId=$(adb.exe shell getprop ro.serialno)
 echo "$deviceId"
 #filename is used for identifying the file and is of the format "timestamp_deviceId"
-FILES_fileName=""
+FILES_fileName="FILES_"
 FILES_fileName+="${timestamp}_"
 FILES_fileName+="$deviceId"
 echo "$FILES_fileName"
