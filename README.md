@@ -1,14 +1,17 @@
 # AnalyzeAppEnvironment
-Tools to analyze environment in which RoboTutor etc. run, e.g. log a directory listing to see what files are there
+Tools to analyze environment in which RoboTutor etc. run, e.g. log a directory listing to see what files are there.
 
-apk that when run, logs recursive directory of whatever folder it’s in (“.”), presumably [main storage]/Download
-	Filename should include tablet ID and timestamp
-	Output filepath, filename, file size, file date (however is easiest)
-	Output to [internal storage]/RoboTutor where DriveSync is already configured to upload
+When run, logs recursive directory of specified folder, e.g. [main storage]/Download in order to list its apk and assets.
 
-adb shell ls -R /mnt/sdcard/RoboTutor
+	Filename should include tablet ID and timestamp.
+	
+	Ideally besides filenames, list file date and size.  Unfortunately, Android shell script editor only lists filename.
+	
+	Output to [internal storage]/RoboTutor, because DriveSync is already configured to upload it.
+	
+To show what files are in RoboTutor folder, could modify to log it instead, e.g. to catch DriveSync lossage if any.
 
-**Example Output:**
+**Example Output for directory of RoboTutor folder:**
 
 /mnt/sdcard/RoboTutor:
 PERF_RoboTutor__3.5.0.1_000001_2022.10.16.19.57.08_unknown.json
