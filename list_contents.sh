@@ -9,6 +9,6 @@ echo "deviceId = $deviceId"
 FILES_fileName="FILES_${deviceId}_${timestamp}.txt"
 echo "FILES_fileName = $FILES_fileName"
 #command to recursively list the subfolders inside the given folder
-out=$(ls -R /sdcard/Download)
+out=$(ls -R -l /sdcard/Download) 
 #command to create a new text file with given fileName as the name and redirecting the contents of out into the file
 echo "$out" > /sdcard/RoboTutor/"$FILES_fileName"
